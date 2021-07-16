@@ -1,0 +1,5 @@
+pip install pytelegrambotapi
+pip install requests
+pip install threading
+pip install bs4
+pip install random

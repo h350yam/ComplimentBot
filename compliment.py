@@ -7,17 +7,22 @@ import telebot
 API_TOKEN = '1879648757:AAG0i16nDsQw3cB6NAxsEESxqHcf54yOmzg'
 
 bot = telebot.TeleBot(API_TOKEN)
+global chat_id
 
 @bot.message_handler(commands=['start'])
-def send_compliment(message):
-    Timer(2.0,send_compliment).start()
-    # print(get_rand_compliment())
-    bot.send_message(message.chat.id, get_rand_compliment())
+# def send_compliment(message):
+#     chat_id = message.chat.id
+#     # print(get_rand_compliment())
+#     bot.send_message(chat_id, get_rand_compliment())
 
-# def send_compliment():
-#     Timer(8640.0,send_compliment).start()
-#     print(get_rand_compliment())
-#     bot.send_message(message.chat.id, get_rand_compliment())
+# def compliment_ddos(chat_id):
+#     Timer(30.0,compliment_ddos).start()
+#     bot.send_message(chat_id, get_rand_compliment())
+#     compliment_ddos(chat_id)
+def send_compliment(message):
+    Timer(8640.0,send_compliment).start()
+    bot.send_message(message.chat.id, get_rand_compliment())
+    send_compliment(message)
 
 def get_rand_compliment():
         random_page_number = str(randint(1,17))
